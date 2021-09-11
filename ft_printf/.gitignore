@@ -1,0 +1,8 @@
+.idea
+cmake-build-debug
+.vscode
+.DS_Storepft_2019/
+pft_2019/
+CMakeLists.txt
+main.c
+a.out

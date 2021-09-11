@@ -1,0 +1,13 @@
+.DS_store
+*.DS_store
+CMakeLists.txt
+cmake-build-debug/
+.vscode/
+.idea/
+check
+dev_tools/print_state.c
+push_swap_visualizer
+pyviz.py
+push_swap
+*.o
+*.a

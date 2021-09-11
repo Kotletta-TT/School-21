@@ -1,0 +1,38 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name localhost;
+    return 301 https://$host$request_uri;
+}
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl on;
+
+    ssl_certificate /etc/nginx/ssl/ft-server.crt;
+    ssl_certificate_key /etc/nginx/ssl/ft-server.key;
+
+    index index.php index.html index.htm;
+
+    root /var/www/wordpress;
+
+   location = /favicon.ico {
+        log_not_found off; access_log off;
+        }
+    location = /robots.txt {
+        log_not_found off; access_log off; allow all;
+        }
+    location ~* \.(css|gif|ico|jpeg|jpg|js|png)$ {
+        expires max;
+        log_not_found off;
+        }
+    location / {
+        autoindex off;
+        # index not_file;
+        try_files $uri $uri/ /index.php$is_args$args;
+        }    
+    location ~ .php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+        }
+}

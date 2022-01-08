@@ -21,6 +21,6 @@ Minishell|Write own shell|:white_check_mark:|91|C|
 Born2beroot|System Administration server && bash scripting|:white_check_mark:|110|Bash|
 NetPractice|Calculate masks and make network topology|:white_check_mark:|100||
 Cub3D|3D-game, analog Doom|:white_check_mark:|115|C|
-CPP-Piscine|Шmmersion in OOP and features С++|100|C++|
+CPP-Piscine|Шmmersion in OOP and features С++|:white_check_mark:|100|C++|
 
 > *All projects have right makefile, and simple compile command* `make`
